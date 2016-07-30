@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/global.css">
+        <link rel="stylesheet" media="screen" href="https://assets.codepen.io/assets/fullpage/fullpage-7d323be6532ebb5f7d2cbc34b045886e.css">
+        <link rel="stylesheet prefetch" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    </head>
+    </head>
+    <body style="overflow: auto;">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <header class="main-header" style="box-shadow:0 1px 1px #CCCCFF; min-height:27px; height:27px; background-color: #5555FF; border-color: #CCCCFF" id="main-header">
+            <table width="90%">
+                <tr>
+                    <td width="30%" >
+                        <div style="padding-left:38px;font-size:1.3rem; font-family: Lato, Lucida Grande,Lucida Sans Unicode, Tahoma, Sans-Serif; color: #FFFFFF">
+                            JobLoc
+                        </div>
+                    </td>
+                    <td></td>
+                    <td align="right">
+                        <span style="text-transform: uppercase;font-size: 0.7rem; letter-spacing: 1px; color: #99F;">
+                            Prototype by team <span style="color: #FFF;">Houseketeers</span></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </header >
+        <table width="90%" style="margin:20px;border: 2px;color:#999999">
+            <tr>
+                <td width="30%" style="vertical-align: top; padding: 18px;">
+                    <table width="100%" style="padding: 10px;margin-bottom: 30px">
+                        <thead>
+                            <td> <div class="alert alert-info" style="width: 100%">Please Select a skill:</div></td>
+                        </thead>
+                        <tr>
+                        <td>
+                            <select style="width: 100%" id="skills">
+                                <option selected>Select...</option>
+                                <option>A skill that's very interesting</option>
+                                <option>Another skill</option>
+                            </select>
+                        </td></td></tr>
+                    </table>
+                    <table width="100%" style="padding: 10px;margin-bottom: 30px">
+                        <thead>
+                            <td colspan="2"><div class="alert alert-info" style="width: 100%">Please inform your housing needs:</div></td>
+                        </thead>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="rent" id="rent" checked />
+                                <label for="rent">Renting</label>
+                                </td>
+                            <td>
+                                <input type="checkbox" name="sell" id="sell" checked />
+                                <label for="sell">Buying</label></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="vertical-align: top">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="img/regions.png" alt="" usemap="#Map"/>
+                                <map name="Map" id="Map">
+                                    <area alt="Southland" title="Southland" href="#3" shape="poly" coords="94,368,123,462,87,486,47,433" />
+                                    <area alt="Otago" title="Otago" href="#4" shape="poly" coords="129,462,158,438,175,394,132,362,102,377" />
+                                    <area alt="West Coast" title="West Coast" href="#5" shape="poly" coords="97,362,175,307,199,250,199,280,206,296,132,360,101,374" />
+                                    <area alt="Canteburry" title="Canteburry" href="#6" shape="poly" coords="245,283,212,298,136,361,180,392,226,344" />
+                                    <area alt="Nelson" title="Nelson" href="#7" shape="poly" coords="243,249,212,295,204,243,210,236" />
+                                    <area alt="Malrborough" title="Malrborough" href="#8" shape="poly" coords="245,249,264,280,220,291" />
+                                    <area alt="Wellington" title="Wellington" href="#9" shape="poly" coords="272,259,295,267,319,236,284,239" />
+                                    <area alt="Wanganui" title="Wanganui" href="#10" shape="poly" coords="286,235,323,235,311,175,296,156,273,163,276,206" />
+                                    <area alt="Taranaki" title="Taranaki" href="#11" shape="poly" coords="271,163,273,206,244,184" />
+                                    <area alt="Hawkes Bay" title="Hawkes Bay" href="#12" shape="poly" coords="367,177,342,158,314,174,328,228" />
+                                    <area alt="Gisborne" title="Gisborne" href="#13" shape="poly" coords="374,118,347,156,371,174,388,124" />
+                                    <area alt="BOP" title="BOP" href="#14" shape="poly" coords="312,112,371,120,319,170,307,116" />
+                                    <area alt="Waikato" title="Waikato" href="#15" shape="poly" coords="274,107,292,101,308,114,313,171,296,154,272,157" />
+                                    <area alt="Auckland" title="Auckland" href="#16" shape="poly" coords="272,64,294,99,272,108,264,71" />
+                                    <area alt="Thames and Coromandel" title="Thames and Coromandel" href="#17" shape="poly" coords="300,83,310,88,311,111,299,105" />
+                                    <area alt="Northland" title="Northland" href="#18" shape="poly" coords="257,50,249,59,263,72,272,63" />
+                                    <area alt="Far North" title="Far North" href="#19" shape="poly" coords="214,4,254,26,273,53,256,50,246,56" />
+                                </map>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="vertical-align: top; padding: 18px;max-width: 300px">
+                        <div class="alert alert-info">Please select a Region on the map</div>
+                        <table class="table" style="margin-top: 189px">
+                            <thead>
+                            <tr>
+                                <th colspan="2">
+                                    <strong><span id="selected_region">#</span></strong> Region Selected - <span id="selected_skill">#</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td width="80%"><h5>Companies in the selected industry:</h5></td><td>#</td>
+                            </tr>
+                            <tr id="rent_cost">
+                                <td width="80%"><h5>Average rent cost:</h5></td><td>#</td>
+                            </tr>
+                            <tr id="sell_cost">
+                                <td width="80%"><h5>Average house price:</h5></td><td>#</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-center"><a class="btn" href="index.html">Read more</a></p>
+                    </td>
+            </tr>
+        </table>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script>
+            $(document).ready(function(){
+                $("#skills").change(function(){
+                    $("#selected_skill").text($('#skills :selected').text());
+                    $.get("wellington_region.json", function(data, status){
+                        alert("Data: " + data + "\nStatus: " + status);
+                    });
+                });
+                $("area").click(function () {
+                    $("#selected_region").text($(this).context.title)
+                });
+                $('#rent').val($(this).is(':checked'));
+                $('#rent').change(function() {
+                    if($(this).is(":checked")) {
+                        $('#rent_cost').show();
+                    }else{
+                        $('#rent_cost').hide();
+                    }
+                });
+                $('#sell').val($(this).is(':checked'));
+                $('#sell').change(function() {
+                    if($(this).is(":checked")) {
+                        $('#sell_cost').show();
+                    }else{
+                        $('#sell_cost').hide();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
