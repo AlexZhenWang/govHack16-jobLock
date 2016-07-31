@@ -1,0 +1,1141 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9300.16.0726.1843                                -->
+<workbook source-build='9.3.5 (9300.16.0726.1843)' source-platform='win' version='9.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Housing by Region+ (JobLock - House Sale data)' inline='true' name='excel-direct.0w50pst0qkbbig12hopp000ttf6m' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\Saipriya.Krishna\OneDrive\My Stuff\GovHack - JobLock\JobLock - House Sale data.xlsx' interpretationMode='0' password='' server='' validate='no'>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Housing by Region].[RegionCode]' />
+              <expression op='[Job by Region and Industry].[RegionCode]' />
+            </expression>
+          </clause>
+          <relation name='Housing by Region' table='[&apos;Housing by Region$&apos;]' type='table'>
+            <columns gridOrigin='A1:E17:no:A1:E17:0' header='yes' outcome='6'>
+              <column datatype='string' name='RegionCode' ordinal='0' />
+              <column datatype='string' name='Region' ordinal='1' />
+              <column datatype='integer' name='Average Buy Value in K' ordinal='2' />
+              <column datatype='integer' name='Average Rent Value' ordinal='3' />
+              <column datatype='integer' name='Population in K' ordinal='4' />
+            </columns>
+          </relation>
+          <relation name='Job by Region and Industry' table='[&apos;Job by Region and Industry$&apos;]' type='table'>
+            <columns gridOrigin='A1:E324:no:A1:E324:0' header='yes' outcome='6'>
+              <column datatype='string' name='RegionCode' ordinal='0' />
+              <column datatype='string' name='Region' ordinal='1' />
+              <column datatype='string' name='Industry' ordinal='2' />
+              <column datatype='integer' name='Count of Companies' ordinal='3' />
+              <column datatype='integer' name='Employee Count' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Average Buy Value in K]' value='[Housing by Region].[Average Buy Value in K]' />
+          <map key='[Average Rent Value]' value='[Housing by Region].[Average Rent Value]' />
+          <map key='[Count of Companies]' value='[Job by Region and Industry].[Count of Companies]' />
+          <map key='[Employee Count]' value='[Job by Region and Industry].[Employee Count]' />
+          <map key='[Industry]' value='[Job by Region and Industry].[Industry]' />
+          <map key='[Population in K]' value='[Housing by Region].[Population in K]' />
+          <map key='[Region (Job by Region and Industry)]' value='[Job by Region and Industry].[Region]' />
+          <map key='[RegionCode (Job by Region and Industry)]' value='[Job by Region and Industry].[RegionCode]' />
+          <map key='[RegionCode]' value='[Housing by Region].[RegionCode]' />
+          <map key='[Region]' value='[Housing by Region].[Region]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>RegionCode</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RegionCode]</local-name>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias>RegionCode</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Average Buy Value in K</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Average Buy Value in K]</local-name>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias>Average Buy Value in K</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Average Rent Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Average Rent Value]</local-name>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias>Average Rent Value</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population in K</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population in K]</local-name>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias>Population in K</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Housing by Region]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>3</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E17:no:A1:E17:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RegionCode</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RegionCode (Job by Region and Industry)]</local-name>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias>RegionCode</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region (Job by Region and Industry)]</local-name>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Industry</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Industry]</local-name>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias>Industry</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count of Companies</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Count of Companies]</local-name>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias>Count of Companies</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employee Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Employee Count]</local-name>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias>Employee Count</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Job by Region and Industry]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E324:no:A1:E324:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Buy Value in K:qk]&quot;' value='Avg. Buying $ (in K)' />
+          <alias key='&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]&quot;' value='Avg. Rent $' />
+          <alias key='&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]&quot;' value='# of Companies' />
+        </aliases>
+      </column>
+      <column caption='Buying price (in K)' datatype='integer' name='[Average Buy Value in K]' role='measure' type='quantitative' />
+      <column caption='Renting Price' datatype='integer' name='[Average Rent Value]' role='measure' type='quantitative' />
+      <column caption='Companies' datatype='integer' name='[Count of Companies]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Industry]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[Population in K]' role='measure' type='quantitative' />
+      <column datatype='string' hidden='true' name='[Region (Job by Region and Industry)]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[RegionCode (Job by Region and Industry)]' role='dimension' type='nominal' />
+      <column caption='Region Code' datatype='string' name='[RegionCode]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column-instance column='[Average Buy Value in K]' derivation='Avg' name='[avg:Average Buy Value in K:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Average Rent Value]' derivation='Avg' name='[avg:Average Rent Value:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count of Companies]' derivation='Avg' name='[avg:Count of Companies:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Population in K]' derivation='Avg' name='[avg:Population in K:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Industry]' derivation='None' name='[none:Industry:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Average Rent Value]' derivation='Sum' name='[sum:Average Rent Value:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count of Companies]' derivation='Sum' name='[sum:Count of Companies:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Population in K]' derivation='Sum' name='[sum:Population in K:qk]' pivot='key' type='quantitative' />
+      <group hidden='true' name='[Exclusions (Industry,Region)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Industry:nk]' />
+          <groupfilter function='level-members' level='[none:Region:nk]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.487013' measure-ordering='alphabetic' measure-percentage='0.512987' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Buy Value in K:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Population in K:qk]&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Average Rent Value:qk]&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;New Zealand&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='RegionCode' />
+        <field-sort-custom-order field='Region' />
+        <field-sort-custom-order field='Average Buy Value in K' />
+        <field-sort-custom-order field='Average Rent Value' />
+        <field-sort-custom-order field='Population in K' />
+        <field-sort-custom-order field='Industry' />
+        <field-sort-custom-order field='Count of Companies' />
+        <field-sort-custom-order field='Employee Count' />
+      </field-sort-info>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run>Color shows count of Companies in each reagion. Size shows average house buying price (in &apos;000). </run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Housing by Region+ (JobLock - House Sale data)' name='excel-direct.0w50pst0qkbbig12hopp000ttf6m' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0w50pst0qkbbig12hopp000ttf6m'>
+            <column caption='Buying price (in K)' datatype='integer' name='[Average Buy Value in K]' role='measure' type='quantitative' />
+            <column caption='Companies' datatype='integer' name='[Count of Companies]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Industry]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column-instance column='[Average Buy Value in K]' derivation='Avg' name='[avg:Average Buy Value in K:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count of Companies]' derivation='Avg' name='[avg:Count of Companies:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Industry]' derivation='None' name='[none:Industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[Exclusions (Industry,Region)]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:Industry:nk]' />
+                <groupfilter function='level-members' level='[none:Region:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:Industry:nk]' member='&quot;Construction&quot;' />
+                <groupfilter function='member' level='[none:Region:nk]' member='&quot;Auckland&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]'>
+            <groupfilter function='member' level='[none:Industry:nk]' member='&quot;Construction&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]'>
+            <groupfilter from='&quot;Auckland&quot;' function='range' level='[none:Region:nk]' to='&quot;West Coast&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</column>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[Exclusions (Industry,Region)]</column>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='1368' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='font-size' data-class='subtotal' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='rows' value='10' />
+            <format attr='font-size' scope='cols' value='10' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]' palette='tableau-blue' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Buy Value in K:qk]' />
+              <text column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' />
+              <color column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <pages>
+          <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</column>
+        </pages>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Housing by Region+ (JobLock - House Sale data)' name='excel-direct.0w50pst0qkbbig12hopp000ttf6m' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0w50pst0qkbbig12hopp000ttf6m'>
+            <column caption='Renting Price' datatype='integer' name='[Average Rent Value]' role='measure' type='quantitative' />
+            <column caption='Companies' datatype='integer' name='[Count of Companies]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Industry]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column-instance column='[Average Rent Value]' derivation='Avg' name='[avg:Average Rent Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Industry]' derivation='None' name='[none:Industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Average Rent Value]' derivation='Sum' name='[sum:Average Rent Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count of Companies]' derivation='Sum' name='[sum:Count of Companies:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[Exclusions (Industry,Region)]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:Industry:nk]' />
+                <groupfilter function='level-members' level='[none:Region:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:Industry:nk]' member='&quot;Accommodation and Food Services&quot;' />
+                <groupfilter function='member' level='[none:Region:nk]' member='&quot;Auckland&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]'>
+            <groupfilter function='member' level='[none:Industry:nk]' member='&quot;Construction&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]'>
+            <groupfilter from='&quot;Bay of Plenty&quot;' function='range' level='[none:Region:nk]' to='&quot;West Coast&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <sort class='computed' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' direction='DESC' using='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]' />
+          <slices>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[Exclusions (Industry,Region)]</column>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</column>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]' field-type='quantitative' max='10000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='subtitle' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]' scope='rows' value='Avg. Rent Value' />
+            <format attr='subtitle' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]' scope='rows' value='true' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' value='98' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='44' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' y-axis-name='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' y-axis-name='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Average Rent Value:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk] + [excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk])</rows>
+        <cols>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</cols>
+        <pages>
+          <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</column>
+        </pages>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Population (excluding AKL)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Housing by Region+ (JobLock - House Sale data)' name='excel-direct.0w50pst0qkbbig12hopp000ttf6m' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0w50pst0qkbbig12hopp000ttf6m'>
+            <column datatype='integer' name='[Population in K]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column-instance column='[Population in K]' derivation='Avg' name='[avg:Population in K:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Region:nk]' />
+              <groupfilter function='empty-level' member='[none:Region:nk]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='1353' />
+            <format attr='font-size' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' value='12' />
+            <format attr='height' value='840' />
+            <format attr='font-size' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' value='10' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='font-size' data-class='subtotal' scope='rows' value='10' />
+            <format attr='width-header' value='10' />
+            <format attr='height-header' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='cols' value='10' />
+            <format attr='font-size' scope='rows' value='10' />
+            <format attr='font-size' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' value='12' />
+            <format attr='font-size' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' value='10' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' palette='tableau-blue' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' />
+              <color column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' />
+              <text column='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Region:&#9;</run>
+                <run bold='true'>&lt;[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]&gt;</run>
+                <run fontcolor='#787878'>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='currpage' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card AVG='true' KURTOSIS='false' MAX='true' MEDIAN='true' MIN='true' QUART1='false' QUART3='false' SKEWNESS='false' STDEV='false' SUM='true' type='summary' />
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>&quot;Construction&quot;</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Count of Companies:qk]</field>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</field>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='currpage' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>&quot;Construction&quot;</bucket>
+          </multibucket>
+        </current-page>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Average Rent Value:qk]</field>
+                  <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</field>
+                  <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</field>
+                  <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Average Rent Value:qk]</field>
+                  <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[sum:Count of Companies:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>332.0</value>
+                <value>&quot;Construction&quot;</value>
+                <value>&quot;Canterbury&quot;</value>
+                <value>332</value>
+                <value>8523</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[:Measure Names]</field>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Industry:nk]</field>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]' type='color' />
+            <card param='[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]' type='filter' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='42'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[avg:Population in K:qk]</field>
+            <field>[excel-direct.0w50pst0qkbbig12hopp000ttf6m].[none:Region:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAASwUlEQVR4nO3dzXMcx3nH8e/MzszOvi8WAEmAEECRlkhJEfViU5JlKYzFssuussu5qByn
+      fHJVDkkOOaVSOboql/wHueSQqiQHp5xKKo7siqTIiWTLkt9EvRAiQJEEQQLEO/ZlZnbnrXMA
+      JAUGRRKLARbLeT63XXIaD8j97XTP9HRrSimFECml97oAIXpJAiBSTQIgUk0CIFJNAiBSTQIg
+      Uk0CIFJNAiBSTQIgUk0CIFJNAiBSTQIgUs0AUErhuu5dHRD7LrNLTQqZgOtLTUZreUpHJpiZ
+      /pBTp07R6XTIZrN7WrQQSdF2NhtUMTX5NjeWsmQNl2M1k19NrxIbMWfOfImjQ2Vc1yWfz+9d
+      xUIkaIddII0HTp4iA6Bpm+9FlAtF5heWEy5NiL1n7PgILcvExBHyVsDsUpOnHx+mNDLBzMVJ
+      4j0oUIi9tMMu0J1JF0j0E7kKJFJNAiBSTQIgUk0CIFJNAiBSTQIgUm3n9wE2vfXGTwkihaY0
+      jnzuBFeuzHPu+aeSrE2IPdf1GUABdOrMr9R56aVXeerMkwS+T7vdTq46IfZY1wGoVKpEmRJj
+      wxW+/Z0Xee3llzEsC9u2k6xPiD21z3eCFa/++D9YaCn++MVvcf2DN3nzqsfjx6qcn7rO4dGj
+      LFyeojJ6jK+c/WKSZQlxS/s+CJ65NsPVmaso4MbcCploHT8/xleffYTr82uce+FZLl++st9l
+      iZTqehDcFaXQrBIPH4pYCaB8+CjjAzqv/O/PeaPj8b3vfpP3JmcxYhlHiP2x75PhluevcbMZ
+      UV+a4+kvPMavzk/x4LHDvHthmpHxE2juCqWR44wMlpMsS4hb2tMA1N2AyZuNRNp9ZLRMyTYT
+      aUuIj+1pF+i9G3W++/dvJdLWD//0WT4/MZBIW0J8TO4Ei1STAIhUkwCIVOs6AItz1/jN+Q+4
+      ef0qbqiYnJxENhsT/abrQfDVq1dZXW0SNIvMvzfJmTNfQrvzYUIcKF2fAbwg5oH7BliuO58s
+      i+LLZDjRZ7oOwIMnjtFQJZ44/TDPPPscBdoyGU70na67QCNjxxgZ+/T1Q488nEQ9QuwruQok
+      Uk0CIFJNAiBSTQIgUk0CIFJNAiBSTQIgUk0CIFKtywAobsxc5if/+SPe+fWvWXNc3vjFL2Uy
+      nOg7XQZAY3R8HLtQwfAb/NM//4DHn/y8TIYTfafrLlBr/hKVsZMAfP1r53jzzV/KZDjRd7qe
+      C2RWRjk1XCQefgKrVKWSzcpkONF3ug6AXdhctqRSBWDo0KFEChJiP8lVIJFqEgCRahIAkWpb
+      AnD+gyn+8V9e6lUtQuy7bWeA8xem+Lt/+CELSyu9qEeIfbXlKtDh4UG+cvYZABaWVjk8PNiT
+      ooTYL1sCcOTQIEcOyYdepMe2LpBSims35u94YNB2uDxzHaexThArlpaWZC6Q6DtbzgCNZov3
+      Jy/x7z/5b/7se3/ExNjoZxym+MWbP8ew8ixfC6FUIWtXGB4e3oeShUjOljOAruv88Ecv84df
+      f+E2H/4NTificFFjsd5i6sNpKgM1mQsk+s6WM4DX7vD9v/pz4vhOnRmNB+6/j4Xlde6/7yhj
+      D53m3V/8jPHff17mAom+siUAw4N3vwHFiZOPcOLkp6+f//3nEytKiP2ypQuklGL60jT/8+qP
+      +ejazV7VtCtKxTQbDfwg3Hyt8P2AMPBx2x1UHNFyXBmwC+AWs0FXblxicORzRFHYi3p2LWw7
+      tNoh+WIGALdZZ83xyRo6hqZoKo2ybdB0Dcp5q8fVil7bdhk01rLM37jEHYcBB5Ru2gwNFFld
+      XUXFIWv1FioO0TWNjA5hDJZpEIT9GXCRrG0ByGYtXMe77VanB1kUBjSaLXK5PH4QMTZ2lFKh
+      gGnqBCpDtZBlrdWmXJDBuvidLlC9XgelqFRraH3aS7bsPIN2HqUUQRCCplGtVrb8nUKx1KPq
+      xEGzJQCVSoUgCOinWdLXlhp4/u67MwXbZGxQgpE22wbBi0uLlGtHelFLV9xOiNMJdt2Ort/9
+      mhZR6HN9fomJ+45SX1shjBVGxsDr+JimQeAHmFaWwVp113WJvbXlq14D7h8fx3UdwrhHFR1w
+      Sinq9SZ29tMrSJqmcFwPFUebNxE1PM/tXZHirm29DwB0og6HDo/RWFm+7YE3rl3mgw8uMp/C
+      XSIty6TTbtPxA0zTJI7Bti0M00LXNYyMjp3L9bpMcRe2dIE0TaNaGeb9C1N8+WvfuO2B01PT
+      VIdGWZy9yVsp2iVS0zSKpTLFUhnP88gXy+SLva5KdGtLAJRSLK83+cq557l0ZYbHHnngMw98
+      4swzOPNTvH2tRblaZn5hmeGyTbvd7ttLqLfS9kNWW589wW/Na911W8PlHKaRSaIskZBtg+DA
+      Wee1n76BURjgxOeOU8ze+j/Mqa+wFBR45olHKI9MMHNx8p5cGKsdRMyvOYm0VS1kJQAHzLYA
+      hEpjbOJ+Rsc/+8MPMDp+nP8/YVp2iRT9aNsFf7/TxvM8wijqRT1C7KttAchk5BQt0mNbAGq1
+      GsQhUb/OhhNiB7YFwPXa2NksjiM3csS9b0sA5mYucfL002S0iMFBWR5F3Pu2BGC11WF4oMij
+      T57h5uyVXtUkxL7ZujBWrczrr7+OimNOn3m2VzUJsW+2PhQ/Os7w6HivahFi33U98V8pxSuv
+      vMKVC+dll0jRt7oOwOz0+yw1Ojj1VdklMmFKxbRaLWK18ZXSaXt0Pl7ZwmsTy8oWiel6n+Cm
+      F6DadVw/kl0iExb6HTRi6k2POPJZXavjOA4rKyu4jsPKyjKdtksgD23sWpeb5Gk88tiTHJ04
+      jqkhu0QmzMzmCMMQFYeoSJGxcoS+R0wGkwjHjxkqZ/H8AMvI9rrcvtb1LpEA1eqnj/zJLpHJ
+      8T0Htx2QtW2CWMfUOigrh63F+JFioGzj+gGlitnrUvvergIg9oaVKzCYK6BUTBBGDNRq2/6O
+      PIOTDAnAAXB1sU4n2P3s21LOYrQm0dgJCcAB4HbCRJZ2MTL9s5zNQSH/YiLVJAAp5XfatDfX
+      U9pYMdtBKQjDgFgpPNchCO/9h6IkAGmkFEEY0aivAbC2toZORL3Z4sbsdcIwpOW2WVtb63Gh
+      e08CkEaaRs7OomJFpCBGw7IM4lijXCoSq4g4iiAF9/a7DkDbqXPtxoLsEtmPlKJer2OYFkGn
+      TcG2qNc9ikUbwzTJ6BmMTAbLuvfvM3R9Fejm0hpzMzMsZyG0ZZfIvqJpDNQ2HnjyfR/LLpEr
+      bPyRVdm4uTk4lI4HoroOwMTEfSzNTLFSj1i4ushzX/7qJ3OB7qWFse4FTc9nbvXuF/C6nWOH
+      KmTNe2fhhK4DMPn+u8RWiZGKzVNffkx2iTzAwiim1d79CtrAJzNU7xVdB+DhR5/Y8lp2iRT9
+      SK4CiVSTAIhUkwCIVJMAiFST2aBiT7TdFo7XxrDyVEo5Vhbn0XMDaKFHO4go2Bau51EbOoyZ
+      6e6Oc6O+ThBGVKo1MjqsLC1SHqjRbDTIGBY5S8P1YaDy2VPE5Qwg9oSdL2IZOpnN/RBKpSIo
+      KFfKEEcUimUyGsSq++eay5UqOjGxUigVEccxmm4yUK3g+z4qVoTR7aeZSwDEnnAaa6y3fAxd
+      IwgjNG3jW76+XkfTNBqNOqBvbirYnVZjjUy2gGXo6LqBaRqoOGJ5eZXBwRpWNnvH2UzSBRJ7
+      olAeoFDemGrdCSJsu8SADZDc5oGZjEkUhjhOEzNboFiuoGsK285uzEjIZamUbv+EXNcBuHHt
+      MotrHiODBcpHJpiZ/pBTDz3UbXOizy3WXcLoNt0Zx7+rdnKWwUBx+2yCIIxo/+5jo7qFbkEM
+      dIKPuzoxmpUjBlrtjffa4dafXcian+wL3WUAFMXKIOvz73Bxepm1FO0SKW5tse4m8lxzrWjf
+      MgANz+fqYmPX7QP83vgQWX1jbNLlGEAjcNZYzwwwaIeUC0XmF5ZlYSzRd7peGW7u5hLVXIbS
+      keM88+xzFGjLwlii73S9MtzpJ89seUd2iRT9SC6DilSTAIhUkwCIVJMAiFSTAIhUkwCIVJMA
+      iFSTAIhU63oy3OKNK7z+m4ucHM6RGzvOlSvznHv+qSRrE2LPdX0GGBoZZ6icAxXy0kuv8tSZ
+      JwlkLpDoM10HQNc3D9UMvv2dF3nt5ZdlLpDoO7t4IEbj7Nmzn7z61je/nkA5QuwvGQSLVJMA
+      iFSTAIhUkwCIVJMAiFSTAIhU6zoAS/Oz/PbdCyxcv4obKiYnJ2WPMNF3ur4PMH1llmM1k7d+
+      O0tsyLIooj913wXSPv64R58siyJEv+n6DPDAsTFml5o8/fgwpZEJZi5O0v0yp0L0hgGglMJ1
+      3R0dmC/XOFmuAaA6LuPHJvAch06ng9rcSG3Ihj/54tFECq2YMY7jbK/DUBgJdL6y+q3bj4OI
+      SjaZzl3QaeOE25cILBgKS9vD3yFM7nfwO23iYHtbRRNsffc/w9KiW/4OKgwT+x06bY/Q32hL
+      UyrZbf9c15VtUkXfkMugItUkACLVJAAi1SQAItUkACLVJAAi1SQAItUkACLVJAAi1XY8F8hd
+      needqcvkS6MszV7g5OkvcP2jCzi+zrlzZ+/cgBAHyI7PAPnaCMeP1GgHDpVKjempaTQjx6Ch
+      sS4LY4k+s+MANJevc2XBQYt8ojjGMAxU4LESKqqyMJboMz2ZDBdHHv/6g3+jMjJB1LyJQ56R
+      ks7czRXOfuNFhou738A+jgLq9Sb5Upm208TM5sllDdy2TyGf3G7lor/1ZBCsZ3Kce+FLXL58
+      lXPnznHl8mWe/YOvUrV8Gl6QyM9QCkxTx3U9TNPCcRxarSYtZ2fTvsW9rScBiIMWV246GMrj
+      3cmPGCtmeeNnL6MOn+bEcDLfzkopcvkSQcfDzNqoOKRYLJHAlHVxD+nN8wBKMXXhPKXDx8Fd
+      ohllwV1ibqnO6c8/Q620+3FEHAbUmy1y+QIdz8GwcuRzFq7XpiDPK4hNexqAv/jLv+biQiuR
+      dh8br/G3f/P9RNoSm5TC81zMbI6MrhFGETqKth+mZpy0+9HmbVyYbzI9lsyq0dbcf93y/Q+v
+      r+J0dj9uKOctHhgZ2HU7/SRWEbGCtbU1LF3RjjNkVICuaRiWTda49/uLcic4xXTdwDINlFKU
+      yhUyOmiaRhRFxHE6ljjY0zOAONjiKKDeaGFZWdA0TMNAUxqBpmNk7v1vf5AApJqeMRkaGvzk
+      daVc6mE1vSEBSIGm5zO3mszFiGOHKmTNTCJtHQQSgBQIo5hWO5kbjHGyFw17TgbBItUkACLV
+      dv48wNo871ycYWTsOCs3LmEWahiRSzPQeOYLT+xFjUJ8pij0Wa+3UEoRhQG6YZI1M3jtDkPD
+      h8nc4St+588DDIxw/5ESi3OXCY1h6quLNFwf022xfUVHIfZWxrAoFbJoegbQ6HgehXIZTSli
+      ded7GV08DzCHXh7Dc1tEfnPzxkmIr4EmD8SIfRb6HnMLK9h2FtPMYNk5WvU6mq4Rx3cesO+4
+      C1QcPMLipUt88bkXaCzNYRYHyUQOLV8nb1kgD8SIfWRYOY5NjAN0NX9pxwHQNJ0TDzwIwPDI
+      2Oa7OdJ2C0WpmEa9jmHZqCig3QkpFrK0/YhKuUwCq53Tdh08PyBv27TbHrqZJfI7ZHMFcra1
+      +x/QR9xOwLrTSaStQ5U8xubgQO4DdEsp8sUya2urDNWqeJ0mzZZLOW/R9HzK+d1/QDOmhRV0
+      CDWDKAyxTIPQsGk16+Ts4QR+if7h+SHza8mMMgdLOYzNe3lyGbRbmk6zvkqpVMVtNiiUK9iW
+      SaPlJPLtD0Ac4gaQt3RCpZG1baKOSxCmY6LafpAzQJdUFBArnTgO0U0b28rghyYRRYoJdU9c
+      r73xrR/FFAsFND2DkdEpFNM1bXsvSQC6pBvWlolkAHa+QJKXACrVTz/oprHxX1UdkA9/kiQA
+      d7DudPjo5noibT00ViOfNbe9f2F2Bc8Pd91+tZDlxJHqrttJExkDiFSTAIhUkwCIVJMAiFST
+      AIhUkwCIVNtxAFQccWlqik4YM3v1EtfmFmiuLzO/uLoX9Qmxp3YcgMbyTQYOH+att37Je+99
+      QLFQ5Pz7F7l68QOSeepUiP2z4xth5eFR3nn7dY4/+Ci29iDnf/M2tp3HCn0c3ydut++8NqgQ
+      B8SOzwDLsxdZcHQyUYfpixcYGB6hlDcIckXZIEP0nR2fAYbHT/G1jecPGDlyJOl6hNhX284A
+      SimilKwLKcSWM4BSijdffw2n0+G+E49y6vjYZx0nxF1p1NcJwgjLNAnCADtfRo/btKMM1VLv
+      x4rbzgDZrIXreDKQFYkoV6pkiLFyBXJZgyDwaTRbROHuZ78mYfsgWCkKeZtGy+tBOeJe02qs
+      o2ULELZxOoq8paNnMgTBwQjALQfBGdNGVwejQNHfMoZBFIREuoGZ0Yg1k8HaEGF0MMaZ/wdC
+      kjh3hHHsLQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAALoklEQVR4nO3dXXBU93nH8e/Zd+2uhLQSCAECoRdbxjYCjE0xtvwSMyG2c5Eyk/FN28lN
+      2tv2prnqRS877Tidpm2SNp0mdVq7dW1CggkNtgsYYwoSGCEEkpCQQK/oZVerfdXunl5APcEG
+      WhdHa/v5fW5W2jm7z3/P6KtzdrWadVzXdRExylPuBYiUkwIQ0xSAmOb7+BXZbJZSqVSOtYgs
+      u08EUCqVmJqZp+filTIsR6ypWVVLyRco2/xPBABwtneI77z8+nKvRQx69htfJVO9pmzz7/oc
+      ILa6gT2Pttz1DgKhKFvvXw1ARWUN2+6r/1+HVsXq2Lyx9lMsU77MSoUcV97bR8/Pf0J8avqu
+      28ZH+rndCXopG2f8Uu+nnn3bI8D/eOGZbbTG/BztvkxjawtzYyPUrmti5toID3RspnVliEMf
+      jLC5rRZftJaF5BJbWoKkvVV0dmygu6uHXGAFbY11uNkFfna0jz3P7aC+tobseD/nhmc/9YLl
+      y6f/Fz+gette1u+o5uLbB4h0PsflIwcgWEPzjp1cPX2MzMICG3Z+lbOvvUz7N/+Y3HgP+VIF
+      Gx/ZztDxX+IPVXCtt4e5wTM0d/428aEzNHTsYuLD44QiIaaHB/AEamh5Yjfz/aeobN1O0O+9
+      8xHA469gbaTEz7on2LO9ida2jdRF/LS1baS9vY0HYyXePD7A2roo23/rMbbU+7m+mAccYmEP
+      +97pYe/zO3l48/0MX7hA9Zomnnh8G+HFCboHp3GWcQfL55lLfC5N/fq1ePwRNu35JunrYzQ8
+      spv82Dlmxq5w/ep1Wh7bzpXuLupathD2zTE3NkV+4gwj584wO51k/cNb8YbruL/zafoOvcFk
+      7ylcYLL3FInh00SbO6kMJpkYvsa1810EfDd+9O94BNj6aAdBBzrWRti0bivv9C/g83oIBf0E
+      QkHSqTT53BKhUIDJ8QlWrVuD78MEjs/P0zvbqQ4P4OBAYYmpRIqFxTShUJDF6QzxbIpSeLl2
+      sHy+OYTDXlLJDJFogEu/fI1g2CGZ8rG0VMB1XcKxVfhCK3CcIuBSzKbw+IKsWL+VYLSKhcpq
+      AEIrYnhDUdxiDgcX1y1RyOeACkJVNcTWPUvXP3+PSNMTOM6NX8F3DGBDzM+f/eggmRK88LVO
+      xi6P8JXdnbiOh5MXLlH/zON86+vrOfjueU52LTJXWkH76hDXpuLkKxKsXlXF6Pgsk5Npcksu
+      U9NzXOwb4MU9u2gLBek5070ce1e+ANqf/x0u/uonuECsfRdhT5x4bx/+ylp8vgoqV67C4wsS
+      rV2JE8qSKdURrBhmZmSEts52KlemcXwhSqkJzu1/lean9pK9dore/T8mUL2Oitpq/H4PnmAM
+      p5SncfvjH812Pv5eoHQ6zaEjXXoVSJbFcr4KNDdwktGLw3S8+BI3DwB3fxIs8mUSa9tBrG3H
+      LdfprRBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhp
+      CkBMUwBimq/cCxDbIs4SYU+mbPMVgJRVpG4FwaY1ZZuvUyApu5mhCyQTKQDSM2PMTk5/Jvdb
+      KmTJZXK3nzkyhOu6CkDKr/tf/oYPDr4FuJx+7a84+85xllJxhk6/T2IuweL0GNeHLzExNIzr
+      usSvDjLWP0B6dpxMOs/86CDZXIG5ayPkU4mbt4vTf/DHnH73A2ZHh3Hho0uAiwdfJZkpKgAp
+      P39lA4X4VfKZBEueCrzA+f/Yj8fn4+0ffJfho2/Se6qX82/+A5OjQ1w48V/0H/onhs59yPkT
+      pzn+93/K4Lk+ug/8nN5f7cfj9/PO97+Lx+fHFwzSte9VXOD0zUuAlm0PMXJhQAHI54GHxuZ6
+      Tu17g9Udu4ASxXyG8UsXSCWT4AZofeIpGttayWbSpOcmWZiZItSwieTAMSo3bGP48CtUNXdQ
+      yqcYv9hLOrlIRXUNVasaboxwXdxSiaFjv+DtH36f6gd3MH70pwpAys/j9bJhx1P0n+xifes6
+      PA7Mjo5QyGXxOg6ux4PjgOPxspScIzEzj8fjo1AA/9IcKx95nsWxIZof2cLM6BUKuRyOA4Fo
+      NcMnj1BVHeLIP/4t8fk0zU++yFe+/QdUROpJT1zGcV3X/fXFpNNpDh3p4jsvv16u/SGGvPTt
+      bxBs2li2+ToCiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDE
+      NAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDE
+      NAUgpt32UyKrV9Wy6+vPLfdaxKBwVZRiGeffNoCCx088VLfcaxGDio63rPPveAq0Z/NaIh7Y
+      0lLP3gfqwHHY29FwyzY72uppqatkd0s1DzZU3XXQky0KSj5/7vhB2WOLBVprgjRX+Qh4/EQj
+      YUr5PI+11tNU6SexmCYX8BHweYgGPGwIhaiqitAU9hDye/j3c5O88HAD4LCQTLFl40qmF7Js
+      a4rhACcuTfH05nUkUjlSyRSHBueX71GL3HTHI0D/xAItDdU4xQJjmRKdTVX0TS7yTEuMQqnE
+      Q401BH5t+2jQRyTg5b3+Sa4sFunYUMvw1escvDSLjxIDU0m8kQiDI9P8W88UOzfGoLjEG2eu
+      EVsRWYaHKvJJdwwgl8lQtyrGxPUk5ycXebIxyuV4nqmFDO8PzdJ9NcHSx2/kQqHkUnRdEqkc
+      a2IRNtZF8Drg9XrI5pZorIvSXBclkc5RKN74fL6i+4nxIsvijqdAAG/3jjExkyZTcnjljMuS
+      6/L62XG2ra2ifzJB0esnk1sinfHg8WXJlSCed+kfj5MrlIhVVFFb4WMxk6FrZp5iNsd5t4Ka
+      ABwaXKCp9sbH2J8amVuWByvycXcN4PLUws2vXHonkwAsZvIcHZy5ef2NY0Aic+vtMokMPp+X
+      SMiP3y1yeDTJYuHmr/lk/qPtBmdSAAzPpu/tUYj8P901gHtRKBQ50DP+m7p7kc+E/hIspikA
+      MU0BiGkKQExTAGLab+xVIJH/i0Ahhy+bLNt8BSBlVfQHcSuiZZuvUyApO7dUZKTrGF1v7Sc+
+      lwC3yPzkxLLMVgBSduf2/YjZRS8tWzZz7O/+nLG+s+z/y78gGZ/n/OH99L5/glKpxNUz73Hh
+      2H8ydnmI6YEeug+9RSaTu6fZCkDKrMTwwDhbOx+nek0TDz7azsT4ArXrN7Iw2kdkzX2MnTjA
+      YPcxLpwbpcKT4MOjx7jSd5HGltW8+8pP72m6ApAyc6gIuCym84BLfGqGWEMDwXCEzOwkl08d
+      J72wyOLMBNXr22i47yH8njzR2hrqmjdRTN/bGyn1JFjKzGHXS7/LiVf+Gq/fT6i2mab7NtB3
+      6F9ZqGlmKZPCF44Qa3mMwcOvc+R8Fqd2E6npCQ7/8Hu0dX7tnqYrACm7aEMLu3//D2+57oU/
+      +pNbvs/NX6WvFCAc9rHqgYd4YGv7ZzJbAcgXQrCmkWd/71sUSg7hyrv///mnoQDkCyMYXUHw
+      M75PPQkW0xSAmKYAxDQFIKYpADFNAYhpCkBMUwBimgIQ0xSAmKYAxDQFIKYpADFNAYhpCkBM
+      UwBimgIQ0xSAmPbfr5jE+dahOtwAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='144' name='Sheet 4' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
