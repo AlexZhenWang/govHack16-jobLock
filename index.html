@@ -150,7 +150,10 @@
                 </td>
                 <td style="vertical-align: top; padding: 18px;max-width: 360px">
                         <div class="alert alert-info">Please select a Region on the map</div>
-                        <table class="table" style="margin-top: 189px">
+                    <img src="img/Company%20vs.%20Rents.JPG" id="all_regions_chart"/>
+                    <img src="img/Canterbury%20Company%20vs.%20Rents.JPG" id="canteburry_chart"/>
+                    <img src="img/Wellington%20Company%20vs.%20Rents.JPG" id="wellington_chart"/>
+                        <table class="table" style="margin-top: 18px">
                             <thead>
                             <tr>
                                 <th colspan="2">
@@ -205,6 +208,9 @@
                     "Structural Engineer",
                     "Civil Engineering Technician",
                     "Project Builder (including Building Project Manager and Site Foreman)"];
+                $("#canteburry_chart").hide();
+                $("#wellington_chart").hide();
+                $("#all_regions_chart").show();
                 $("#skills").change(function(){
 //                    if($('#skills :selected').text() in (['Structured Engineer','Foresting Engineer', 'Mechanical ENgineer')){
 //                        if(seleceted regios is Wellington){
@@ -243,6 +249,10 @@
                 });
                 function displayCompanyNum() {
                     if(area === "Wellington") {
+
+                        $("#all_regions_chart").hide();
+                        $("#canteburry_chart").hide();
+                        $("#wellington_chart").show();
                         $("#rent_cost_value").text('$331 PW');
                         $("#sell_cost_value").text('$355 K');
                         $("#number_companies").text('2337');
@@ -275,9 +285,15 @@
                             }
                         }
                     }else if(area === "Canteburry") {
+                        $("#all_regions_chart").hide();
+                        $("#canteburry_chart").show();
+                        $("#wellington_chart").hide();
                         $("#rent_cost_value").text('$332 PW');
                         $("#sell_cost_value").text('$384 K');
                     }else{
+                        $("#all_regions_chart").show();
+                        $("#canteburry_chart").hide();
+                        $("#wellington_chart").hide();
                         $("#rent_cost_value").text('#');
                         $("#sell_cost_value").text('#');
                     }
