@@ -53,8 +53,55 @@
                         <td>
                             <select style="width: 100%" id="skills">
                                 <option selected>Select...</option>
-                                <option>A skill that's very interesting</option>
-                                <option>Another skill</option>
+                                <option>Forest Scientist</option>
+                                <option>Construction Project Manager (Roading and Infrastructure)</option>
+                                <option>Project Builder (including Building Project Manager and Site Foreman)</option>
+                                <option>Quantity Surveyor</option>
+                                <option>Surveyor</option>
+                                <option>Chemical Engineer</option>
+                                <option>Materials Engineer</option>
+                                <option>Industrial Engineer</option>
+                                <option>Mechanical Engineer</option>
+                                <option>Production or Plant Engineer</option>
+                                <option>Electric Line Mechanic</option>
+                                <option>Electrician (General)</option>
+                                <option>Electrical Engineer</option>
+                                <option>Electronics Engineer</option>
+                                <option>Electrical Engineering Technician</option>
+                                <option>Electronic Engineering Technician</option>
+                                <option>Civil Engineer</option>
+                                <option>Geotechnical Engineer</option>
+                                <option>Structural Engineer</option>
+                                <option>Civil Engineering Technician</option>
+                                <option>Chef</option>
+                                <option>Ship's Officer</option>
+                                <option>Ship's Engineer</option>
+                                <option>Ship's Master</option>
+                                <option>Multimedia Specialist (Film Animator)</option>
+                                <option>Procurement Manager</option>
+                                <option>Other Spatial Scientist</option>
+                                <option>Environmental Research Scientist</option>
+                                <option>Food Technologist</option>
+                                <option>Anaesthetist</option>
+                                <option>Clinical Psychologist</option>
+                                <option>Diagnostic and Interventional Radiologist</option>
+                                <option>General Practitioner</option>
+                                <option>Medical Radiation Therapist</option>
+                                <option>Medical Laboratory Scientist – including Cytotechnologist (Cytoscientist)</option>
+                                <option>Registered Nurse (Aged Care)</option>
+                                <option>Registered Nurse (Critical Care and Emergency)</option>
+                                <option>Registered Nurse (Medical)</option>
+                                <option>Registered Nurse (Perioperative)</option>
+                                <option>Obstetrician and Gynaecologist</option>
+                                <option>Pathologist</option>
+                                <option>Physicist (Medical)</option>
+                                <option>Physiotherapist</option>
+                                <option>Psychiatrist</option>
+                                <option>Renal Medicine Specialist</option>
+                                <option>Sonographer</option>
+                                <option>Specialist Physician in Palliative Medicine</option>
+                                <option>Surgeon (General)</option>
+                                <option>Veterinarian</option>
                             </select>
                         </td></td></tr>
                     </table>
@@ -112,7 +159,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td width="80%"><h5>Companies in the selected industry:</h5></td><td>#</td>
+                                <td width="80%"><h5>Companies in the selected industry:</h5></td><td id="number_companies">#</td>
                             </tr>
                             <tr id="rent_cost">
                                 <td width="80%"><h5>Average rent cost:</h5></td><td>#</td>
@@ -130,14 +177,53 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script>
             $(document).ready(function(){
+                var skills = "";
+                var area = "";
+                var health_skills = ["Anaesthetist",
+                    "Clinical Psychologist",
+                    "Diagnostic and Interventional Radiologist",
+                    "General Practitioner",
+                    "Medical Radiation Therapist",
+                    "Medical Laboratory Scientist – including Cytotechnologist (Cytoscientist)",
+                    "Registered Nurse (Aged Care)",
+                    "Registered Nurse (Critical Care and Emergency)",
+                    "Registered Nurse (Medical)",
+                    "Registered Nurse (Perioperative)",
+                    "Obstetrician and Gynaecologist",
+                    "Pathologist",
+                    "Physicist (Medical)",
+                    "Physiotherapist",
+                    "Psychiatrist",
+                    "Renal Medicine Specialist",
+                    "Sonographer",
+                    "Specialist Physician in Palliative Medicine",
+                    "Surgeon (General)",
+                    "Veterinarian"];
+                var construction_skills = ["Construction Project Manager (Roading and Infrastructure)",
+                    "Civil Engineer",
+                    "Geotechnical Engineer",
+                    "Structural Engineer",
+                    "Civil Engineering Technician",
+                    "Project Builder (including Building Project Manager and Site Foreman)"];
                 $("#skills").change(function(){
+//                    if($('#skills :selected').text() in (['Structured Engineer','Foresting Engineer', 'Mechanical ENgineer')){
+//                        if(seleceted regios is Wellington){
+//                            set text to 5400
+//                        }else{
+//                            set text to blank
+//                        }
+//                    }else{
+//                        set text toblank
+//                    }
                     $("#selected_skill").text($('#skills :selected').text());
-                    $.get("wellington_region.json", function(data, status){
-                        alert("Data: " + data + "\nStatus: " + status);
-                    });
+                    skills = $('#skills :selected').text();
+                    displayCompanyNum();
                 });
                 $("area").click(function () {
                     $("#selected_region").text($(this).context.title)
+                    area = $(this).context.title;
+                    displayCompanyNum();
+                    console.log(area);
                 });
                 $('#rent').val($(this).is(':checked'));
                 $('#rent').change(function() {
@@ -155,6 +241,40 @@
                         $('#sell_cost').hide();
                     }
                 });
+                function displayCompanyNum() {
+                    if(area === "Wellington") {
+                        console.log('Its wellinton!')
+                        var matched = false;
+                        for (var i = 0; i < health_skills.length; i++) {
+                            console.log(health_skills[i])
+                            if (skills === health_skills[i]) {
+                                matched = true;
+                                break;
+                            }
+                        }
+                        console.log('Selected:'+skills);
+                        console.log(matched);
+                        if (matched == true) {
+                            $("#number_companies").text('2337');
+                        }else{
+                            $("#number_companies").text('#');
+                        }
+                        if(matched == false) {
+                            for (var i = 0; i < construction_skills.length; i++) {
+                                if (skills === construction_skills[i]) {
+                                    matched = true;
+                                    break;
+                                }
+                            }
+                            console.log(matched);
+                            if (matched == true) {
+                                $("#number_companies").text('5400');
+                            } else {
+                                $("#number_companies").text('#');
+                            }
+                        }
+                    }
+                }
             });
         </script>
     </body>
