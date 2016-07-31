@@ -7,8 +7,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico in the root directory -->
-
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
@@ -212,15 +210,6 @@
                 $("#wellington_chart").hide();
                 $("#all_regions_chart").show();
                 $("#skills").change(function(){
-//                    if($('#skills :selected').text() in (['Structured Engineer','Foresting Engineer', 'Mechanical ENgineer')){
-//                        if(seleceted regios is Wellington){
-//                            set text to 5400
-//                        }else{
-//                            set text to blank
-//                        }
-//                    }else{
-//                        set text toblank
-//                    }
                     $("#selected_skill").text($('#skills :selected').text());
                     skills = $('#skills :selected').text();
                     displayCompanyNum();
@@ -249,7 +238,7 @@
                 });
                 function displayCompanyNum() {
                     if(area === "Wellington") {
-
+                        //we have data for Wellington
                         $("#all_regions_chart").hide();
                         $("#canteburry_chart").hide();
                         $("#wellington_chart").show();
@@ -257,8 +246,9 @@
                         $("#sell_cost_value").text('$355 K');
                         $("#number_companies").text('2337');
                         var matched = false;
+                        //We have data for Health Care and Construction
                         for (var i = 0; i < health_skills.length; i++) {
-                            console.log(health_skills[i])
+                            //trying to match Health Care
                             if (skills === health_skills[i]) {
                                 matched = true;
                                 break;
@@ -270,7 +260,7 @@
                             $("#number_companies").text('#');
                         }
                         if(matched == false) {
-                            console.log('trying to match construction')
+                            //trying to match Construction
                             for (var i = 0; i < construction_skills.length; i++) {
                                 if (skills === construction_skills[i]) {
                                     matched = true;
@@ -290,12 +280,14 @@
                         $("#wellington_chart").hide();
                         $("#rent_cost_value").text('$332 PW');
                         $("#sell_cost_value").text('$384 K');
+                        $("#number_companies").text('#');
                     }else{
                         $("#all_regions_chart").show();
                         $("#canteburry_chart").hide();
                         $("#wellington_chart").hide();
                         $("#rent_cost_value").text('#');
                         $("#sell_cost_value").text('#');
+                        $("#number_companies").text('#');
                     }
                 }
             });
